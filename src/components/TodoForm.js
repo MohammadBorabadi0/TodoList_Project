@@ -11,11 +11,11 @@ const TodoForm = () => {
         <input
           type="text"
           placeholder="افزودن تسک جدید"
-          className="flex-1 border-2 border-purple-700 focus:outline-none ml-[-3px] px-4 py-1 rounded-sm"
+          className="flex-1 border-2 border-purple-700 focus:outline-none ml-[-3px] px-4 py-2 rounded-sm"
         />
         <button
           type="submit"
-          className="border-2 border-purple-700 bg-purple-700 px-4 py-1 rounded-sm text-white"
+          className="border-2 border-purple-700 bg-purple-700 px-4 py-2 rounded-sm text-white"
         >
           اضافه کردن
         </button>
