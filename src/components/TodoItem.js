@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 
-// Icons 
+// Icons
 import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
 import { REMOVE_TASK, TOGGLE_TASK } from "../actions";
 import { useTodo } from "../Providers/context/todo_context";
 
-// Components 
+// Components
 import Modal from "./Modal";
-
-
 
 const TodoItem = ({ item }) => {
   const [isEditing, setIsEditing] = useState(false);
+  const { dispatch, time, date } = useTodo();
 
-
-  const { dispatch } = useTodo();
   const handleToggle = () => {
     dispatch({ type: TOGGLE_TASK, id: item.id });
   };
@@ -36,11 +33,14 @@ const TodoItem = ({ item }) => {
     >
       <div className="w-full">
         <h4
-          className={`${item.isComplete ? "line-through" : ""} flex-1`}
+          className={`${item.isComplete ? "line-through" : ""} flex-1 text-lg`}
           onClick={handleToggle}
         >
           {item.name}
         </h4>
+        <span className="text-xs">
+          {item.date} , {item.time}
+        </span>
       </div>
       <div className="flex items-center">
         <button

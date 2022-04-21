@@ -1,3 +1,4 @@
+import moment from "jalali-moment";
 import React from "react";
 import { ADD_TASK, EDIT_TASK, REMOVE_TASK, TOGGLE_TASK } from "../../actions";
 
@@ -9,6 +10,8 @@ const todo_reducer = (state, action) => {
         id: Math.round(Math.random() * 1000000),
         name: action.payload,
         completeDate: new Date().getTime(),
+        date: moment().locale("fa").format("YYYY/MM/DD"),
+        time: moment().locale("fa").format("HH:mm:ss"),
         isComplete: false,
       });
       return { ...state, todos: updatedTodos };
@@ -25,6 +28,10 @@ const todo_reducer = (state, action) => {
       const index = updatedTodos.findIndex((i) => i.id === action.id);
       const updatedItem = updatedTodos[index];
       updatedItem.name = action.payload;
+      updatedItem.date = moment().locale("fa").format("YYYY/MM/DD");
+      updatedItem.time = moment().locale("fa").format("HH:mm:ss");
+      updatedItem.completeDate = new Date().getTime();
+
       return { ...state, todos: updatedTodos };
     }
 
