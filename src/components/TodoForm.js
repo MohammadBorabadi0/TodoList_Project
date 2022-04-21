@@ -1,9 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
+
+// actions
 import { ADD_TASK } from "../actions";
+
+// Context
 import { useTodo } from "../Providers/context/todo_context";
 
-const TodoForm = () => {
-  const { dispatch } = useTodo();
+// Icons
+import { FiFilter } from "react-icons/fi";
+
+const TodoForm = ({ showFilter, setShowFilter }) => {
+  const { todos, dispatch } = useTodo();
   const [inputVal, setInputVal] = useState("");
   const inputRef = useRef();
 
@@ -39,6 +46,14 @@ const TodoForm = () => {
         >
           اضافه کردن
         </button>
+        {todos.length > 0 && (
+          <button
+            onClick={() => setShowFilter(!showFilter)}
+            className="mr-3 rounded-full bg-gray-300 px-3 py-1 text-xl hover:bg-gray-600 hover:text-white"
+          >
+            <FiFilter />
+          </button>
+        )}
       </form>
     </div>
   );
