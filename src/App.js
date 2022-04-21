@@ -1,8 +1,17 @@
+import TodoApp from "./components/TodoApp";
+
+// Context
+import FilterProvider from "./Providers/context/filter_context";
+import TodoProvider from "./Providers/context/todo_context";
+
+
 function App() {
   return (
-    <div className="bg-red-500">
-      <h3>Hello World</h3>
-    </div>
+    <TodoProvider>
+      <FilterProvider>
+        <TodoApp />
+      </FilterProvider>
+    </TodoProvider>
   );
 }
 
