@@ -1,7 +1,9 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
+import { LOAD_TASKS } from "../../actions";
 
-// Reducer 
+// Reducer
 import filter_reducer from "../reducers/filter_reducer";
+import { useTodo } from "./todo_context";
 
 // initialState
 const initialState = {
@@ -18,6 +20,11 @@ const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(filter_reducer, initialState);
+  const { todos } = useTodo();
+
+  useEffect(() => {
+    dispatch({ type: LOAD_TASKS, payload: todos });
+  }, [todos]);
 
   return (
     <FilterContext.Provider value={{ ...state, dispatch }}>

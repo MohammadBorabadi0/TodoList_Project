@@ -6,9 +6,8 @@ const TodoApp = () => {
   return (
     <div className="flex flex-col items-center w-full h-screen pt-8">
       <header className="mb-8">
-        <h2>تودو لیست</h2>
+        <h2 className="text-2xl text-slate-900">تودولیست</h2>
       </header>
-
       <TodoForm />
       <TodoList />
     </div>
