@@ -13,8 +13,8 @@ const Search = () => {
       name="text"
       value={text}
       onChange={updateFilters}
-      placeholder="Search"
-      className="border border-gray-300 px-4 py-1 rounded-md"
+      placeholder="جستجوی تسک"
+      className="border border-gray-300 text-sm md:text-base px-2 md:px-4 py-1 rounded-md"
     />
   );
 };

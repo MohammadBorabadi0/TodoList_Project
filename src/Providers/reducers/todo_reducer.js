@@ -1,9 +1,19 @@
 import moment from "jalali-moment";
 import React from "react";
-import { ADD_TASK, EDIT_TASK, REMOVE_TASK, TOGGLE_TASK } from "../../actions";
+import {
+  ADD_TASK,
+  EDIT_TASK,
+  REMOVE_TASK,
+  TOGGLE_TASK,
+  GET_TASKS,
+} from "../../actions";
 
 const todo_reducer = (state, action) => {
   switch (action.type) {
+    case GET_TASKS: {
+      return { ...state, todos: [...action.payload] };
+    }
+
     case ADD_TASK: {
       const updatedTodos = [...state.todos];
       updatedTodos.push({

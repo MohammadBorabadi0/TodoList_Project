@@ -38,18 +38,18 @@ const TodoForm = ({ showFilter, setShowFilter }) => {
           value={inputVal}
           ref={inputRef}
           onChange={(e) => setInputVal(e.target.value)}
-          className="flex-1 border-2 border-purple-900 focus:outline-none ml-[-3px] px-4 py-2 rounded-sm"
+          className="flex-1 border-2 border-purple-900 focus:outline-none ml-[-3px] text-sm md:text-base px-2 py-1.5 md:px-4 md:py-2 rounded-sm"
         />
         <button
           type="submit"
-          className="border-2 border-purple-900 bg-purple-900 px-4 py-2 rounded-sm text-white"
+          className="border-2 border-purple-900 bg-purple-900 text-base px-3 md:px-4 py-1 md:py-2 rounded-sm text-white"
         >
-          اضافه کردن
+          +
         </button>
         {todos.length > 0 && (
           <button
             onClick={() => setShowFilter(!showFilter)}
-            className="mr-3 rounded-full bg-gray-300 px-3 py-1 text-xl hover:bg-gray-600 hover:text-white"
+            className="mr-1 md:mr-3 rounded-full bg-gray-300 px-2 py-0 md:px-3 md:py-1 text-sm md:text-xl hover:bg-gray-600 hover:text-white"
           >
             <FiFilter />
           </button>

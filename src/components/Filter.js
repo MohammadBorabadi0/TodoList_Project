@@ -24,7 +24,7 @@ const Filter = () => {
           name="status"
           className={`${
             item.name === status && "bg-blue-700 text-white"
-          } px-4 py-1 rounded-xl`}
+          } p-1 md:px-4 text-xs md:text-sm lg:text-base rounded-xl`}
           onClick={updateFilters}
         >
           {item.name}

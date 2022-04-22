@@ -10,7 +10,6 @@ import TodoList from "./TodoList";
 const TodoApp = () => {
   const [showFilter, setShowFilter] = useState(false);
 
-
   return (
     <div className="flex flex-col items-center w-full h-screen pt-8">
       <header className="mb-8">
@@ -22,10 +21,10 @@ const TodoApp = () => {
           <div className="mb-8 w-full flex justify-between items-center">
             <Search />
             <button
-              className="bg-purple-800 rounded-md text-white px-4 py-1"
+              className="bg-purple-800 rounded-md text-white text-xs md:text-base px-2 py-1.5 md:px-4 md:py-2"
               onClick={() => setShowFilter(false)}
             >
-              اضافه کردن تسک
+              افزودن
             </button>
           </div>
           <div className="flex justify-between w-full mb-4">

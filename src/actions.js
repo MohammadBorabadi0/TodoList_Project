@@ -7,3 +7,4 @@ export const UPDATE_SORT = "UPDATE_SORT";
 export const UPDATE_FILTER = "UPDATE_FILTER";
 export const TOGGLE_TASK = "TOGGLE_TASK";
 export const LOAD_TASKS = "LOAD_TASKS";
+export const GET_TASKS = "GET_TASKS";

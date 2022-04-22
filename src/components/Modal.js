@@ -24,17 +24,17 @@ const Modal = ({ item, setIsEditing }) => {
     <div className="fixed inset-0 bg-slate-900 flex justify-center items-center z-10">
       <form
         onSubmit={handleEdit}
-        className="relative w-[90%] md:w-[50%] bg-white h-[40vh] flex justify-center items-center"
+        className="relative w-[90%] md:w-[50%] bg-white h-[40vh] flex justify-center items-center rounded-md"
       >
         <input
-          className="border-2 border-purple-900 focus:outline-none ml-[-3px] px-4 py-2 rounded-sm"
+          className="border-2 border-purple-900 focus:outline-none ml-[-3px] p-1 md:px-4 md:py-2 text-sm md:text-base rounded-sm"
           type="text"
           value={editVal}
           onChange={(e) => setEditVal(e.target.value)}
         />
         <button
           type="submit"
-          className="border-2 border-purple-900 bg-purple-900 px-4 py-2 rounded-sm text-white"
+          className="border-2 border-purple-900 bg-purple-900 p-1 md:px-4 md:py-2 rounded-sm text-sm md:text-base text-white"
         >
           ویرایش
         </button>
