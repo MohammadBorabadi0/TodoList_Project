@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 
 import { REMOVE_TASK, TOGGLE_TASK } from "../actions";
+import { toFarsiNumber } from "../helper/functions";
 import { useTodo } from "../Providers/context/todo_context";
 
 // Components
@@ -41,7 +42,7 @@ const TodoItem = ({ item }) => {
           {item.name}
         </h4>
         <span className="text-xs md:text-sm text-gray-600">
-          {item.date} , {item.time}
+          {toFarsiNumber(item.date)} , {toFarsiNumber(item.time)}
         </span>
       </div>
       <div className="flex items-center">
